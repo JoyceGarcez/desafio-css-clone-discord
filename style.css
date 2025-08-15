@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --brand: #404EED;
+    --dark-bg: #23272a;
+    --light-gray-bg: #f6f6f6;
+    --white: #fff;
+    --black: #23272a;
+    --maxw: 1200px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+    color: #23272a;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2 {
+    font-weight: 900;
+}
+
+.container {
+    width: min(90%, var(--maxw));
+    margin-inline: auto;
+}
+
+/* --- COMPONENTES (BOTÕES) --- */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 28px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+.btn.primary {
+    background: var(--white);
+    color: var(--black);
+}
+.btn.primary:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+.btn.secondary {
+    background: var(--dark-bg);
+    color: var(--white);
+}
+.btn.secondary:hover {
+    background: #36393f;
+}
+.btn.brand {
+    background: var(--brand);
+    color: var(--white);
+}
+
+.btn--small {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+}
+
+/* --- CABEÇALHO (HEADER) --- */
+header {
+    background: var(--brand);
+    color: var(--white);
+    padding: 18px 0;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo img {
+    height: 22px;
+    filter: brightness(0) invert(1);
+}
+.menu {
+    display: none; 
+}
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* --- SEÇÃO HERO --- */
+.hero {
+    background-color: var(--brand);
+    color: var(--white);
+    padding: 60px 0;
+    background-image: url('assets/imagens/principal.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    text-align: center;
+}
+.hero-container {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-text {
+    max-width: 800px;
+}
+.hero h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.1;
+}
+.hero p {
+    font-size: 1.1rem;
+    margin: 20px 0 30px;
+}
+.hero-actions {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* --- SEÇÕES DE CONTEÚDO --- */
+.section {
+    padding: 60px 0;
+}
+.section.alt {
+    background: var(--light-gray-bg);
+}
+.row {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+}
+.section-text h2 {
+    font-size: clamp(24px, 5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+.section-text p {
+    font-size: 1rem;
+    color: #3f4145;
+}
+.column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 900px;
+    margin-inline: auto;
+}
+.column-center h2 {
+    font-size: clamp(24px, 5vw, 48px);
+}
+.column-center p.lead {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #3f4145;
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 80px 0 60px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.footer-col.brand-col {
+    grid-column: 1 / -1; 
+    margin-bottom: 20px;
+}
+.footer-col h4 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+.footer-col h5 {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+.footer-col a {
+    display: block;
+    color: #dcddde;
+    font-weight: 400;
+    line-height: 2;
+    transition: color 0.2s ease;
+}
+.footer-col a:hover {
+    text-decoration: underline;
+    color: var(--white);
+}
+.footer-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 32px;
+}
+.footer-bottom {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --- ESTILOS PARA TELAS MAIORES (TABLET E DESKTOP) --- */
+
+@media (min-width: 768px) {
+    .menu {
+        display: flex;
+        gap: 40px;
+        font-weight: 700;
+    }
+
+    .hero {
+        padding: 80px 0;
+        text-align: center; 
+    }
+    .hero-actions {
+        flex-direction: row; 
+    }
+
+    .section {
+        padding: 100px 0;
+    }
+    .row {
+        grid-template-columns: 1fr 1fr; 
+        gap: 80px;
+        text-align: left;
+    }
+    .row.reverse .section-image {
+        order: 2;
+    }
+    .section-text p, .column-center p.lead {
+        font-size: 1.1rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr repeat(4, 1fr);
+    }
+    .footer-col.brand-col {
+        grid-column: auto; 
+        margin-bottom: 0;
+    }
+    .footer-bottom {
+        flex-direction: row; 
+    }
+}
